@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title%} Due Date Calculator {% endblock %}
+{% block content %}
+<section id="due-date-calculator" class="due-date-calculator">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-sm-12 mt-4">
+                <h4><span>Due Date Calculator</span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            {% if request.method == 'POST' %}
+            <div class="col-xl-7 result">
+                <div class="card">
+                    <a class="d-flex flex-row justify-content-end" href="{% url 'due_date_calculator' %}">
+                        <h6>Recalculate</h6>
+                        <i class="fa fa-refresh ms-1"></i>
+                    </a>
+                    <div class="card-body text-center ">
+                        <img src="website/static/img/baby.png" class="img-fluid">
+                        <h4>You will meet your baby on</h4>
+                        <!-- December 1, 2022 Thursday -->
+                        <h2>{{ EDD }}</h2>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-xl-8">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5>How do you want to calculate your due date?</h5>
+                        <form action="{% url 'due_date_calculator' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row mb-4">
+                                <div class="col-lg-6">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="menstrualperiod">
+                                            <input class="form-check-input" type="radio" name="duedate"
+                                                id="menstrualperiod" onclick="openDiv()" value="menstrual" checked>
+                                            Last Menstrual Period Date
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="ovaluation">
+                                            <input class="form-check-input" type="radio" name="duedate" id="ovaluation"
+                                                onclick="openDiv()" value="ovulation">
+                                            Ovulation Date
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-4 justify-content-center menstrualperiod">
+                                <div class="col-12">
+                                    <label for="date" class="form-label">The first day of your last period</label>
+                                        <input type="date" class="form-control mx-auto mt-2" id="date" name="men_date"
+                                            placeholder="Enter the date">
+                                </div>
+                                <div class="col-12">
+                                    <label for="cyclelength" class="form-label">Average cycle length</label>
+                                        <br>
+                                        <select custom_select id="cyclelength" name="cyclelength" required>
+                                            <option selected>Select Average Cycle Length</option>
+                                            {% for i in option_loop %}
+                                            <option value="{{ i }}">{{ i }} days</option>
+                                            {% endfor %}
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="row g-4 justify-content-center ovaluation">
+                                <div class="col-12">
+                                    <label for="ovulationdate" class="form-label">The day you conceived</label>
+                                        <input type="date" class="form-control  mx-auto" id="ovulationdate"
+                                            name="ovul_date" placeholder="Enter the date">
+                                    
+                                </div>
+                            </div>
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-submit">Calculate my Due Date</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

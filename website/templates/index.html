@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{% static 'img/logo.png' %}" type="image/png">
+	<title>PregaHelp | Home</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<!-- Site CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar fixed-top mx-3">
+		<nav class="navbar navbar-expand-lg navbar-light mt-4">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<img src="{% static 'img/logo.png' %}" alt="" />PregaHelp </a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'calendar' %}">PregaCalendar</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'blogs' %}">Blogs</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'consultation' %}">Consultation</a></li>
+
+
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-left">
+				<img src="{% static 'img/slider-1.jpeg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 d-flex justify-content-center">
+							<h1>Welcome To PregaHelp</h1>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="{% static 'img/slider-2.jpeg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 d-flex justify-content-center">
+							<h1>Protect yourself and your baby</h1>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="{% static 'img/slider-3.jpeg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 d-flex justify-content-center">
+							<h1>Feel Safe with Mom's Care</h1>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- End slides -->
+	<section id="about-us" class="about-us">
+		<div class="container mb-1 mt-5">
+			<div class="row">
+				<div class="section-head col-sm-12 mb-3">
+					<h4><span>About Us</span></h4>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-3 mb-4">
+			<div class="row">
+				<div class="col-lg-6 order-2 order-lg-1">
+					<p>India is densely populated, therefore necessitating good, universal healthcare. In India, there
+						are no such apps catering to maternal aid.It is impossible for a mother to interact with the
+						doctor on a regular basis, providing minute details and assistance.Parents in rural locations
+						are frequently unaware of fundamental information about pregnancy and the parenting stage.There
+						are a variety of government healthcare institutes and programmes available, but they are not
+						well-publicized or accessible to the people who need them.
+
+						To cater to this problems , we are building a specialised healthcare web app designed
+						specifically for maternal aid.</p>
+				</div>
+				<div class="image col-lg-5 offset-lg-1 order-1 order-lg-2">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="services" class="services">
+		<div class="container mb-1 mt-5">
+			<div class="row">
+				<div class="section-head col-sm-12 mb-3">
+					<h4><span>Services Provided</span></h4>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row gy-5 justify-content-center">
+				<div class="col-xl-4 col-md-6">
+					<div class="service-item">
+						<a href="{% url 'due_date_calculator' %}" class="stretched-link">
+							<div class="img">
+								<img src="{% static 'img/due-date.jpeg' %}" class="img-fluid" alt="">
+							</div>
+						</a>
+						<div class="details position-relative">
+							<a href="{% url 'due_date_calculator' %}" class="stretched-link">
+								<h3>Due Date Estimation</h3>
+							</a>
+						</div>
+					</div>
+				</div><!-- End Service Item -->
+
+				<div class="col-xl-4 col-md-6">
+					<div class="service-item">
+						<a href="{% url 'baby_weight' %}" class="stretched-link">
+							<div class="img">
+								<img src="{% static 'img/baby-weight.png' %}" class="img-fluid" alt="">
+							</div>
+						</a>
+						<div class="details position-relative">
+							<a href="{% url 'baby_weight' %}" class="stretched-link">
+								<h3>Estimate Baby’s Weight</h3>
+							</a>
+						</div>
+					</div>
+				</div><!-- End Service Item -->
+
+				<div class="col-xl-4 col-md-6">
+					<div class="service-item">
+						<a href="{% url 'maternal_health_risk' %}" class="stretched-link">
+							<div class="img">
+								<img src="{% static 'img/health-risk.jpeg' %}" class="img-fluid" alt="">
+							</div>
+						</a>
+						<div class="details position-relative">
+							<a href="{% url 'maternal_health_risk' %}" class="stretched-link">
+								<h3>Calculate Maternal Health Risk</h3>
+							</a>
+						</div>
+					</div>
+				</div><!-- End Service Item -->
+
+				
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o"
+			aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<!-- ALL PLUGINS -->
+	<script src="{% static 'js/jquery.superslides.min.js' %}"></script>
+
+	<script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block calendaractive %} active {% endblock calendaractive %}
+{% block title%} Pregnancy Calendar {% endblock %} 
+<section id="exercises" class="exercises">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-sm-12 mb-3">
+                <h4><span>Pregnancy Calendar : A Week by Week Guide </span></h4>
+              </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="calendar">
+    
+                    <div class="calendar-month">
+                      <div class="calendar-header">
+                      <div class="calendar-main">
+                        <div class="calendar-row">
+                        <a href="{% url 'week_one' %}">
+                            <div class="calendar-day"><span>1</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>2</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>3</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>4</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>5</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>6</span></div>
+                        </a>
+                        <a href="">
+                            <div class="calendar-day"><span>7</span></div>
+                        </a>
+                        </div>
+                        
+                        <div class="calendar-row">
+                            <a href="">
+                                <div class="calendar-day"><span>8</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>9</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>10</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>11</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>12</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>13</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>14</span></div>
+                            </a>
+                        </div>
+                        
+                        <div class="calendar-row">
+                            <a href="">
+                                <div class="calendar-day"><span>15</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>16</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>17</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>18</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>19</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>20</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>21</span></div>
+                            </a>
+                        </div>
+                        
+                        <div class="calendar-row">
+                            <a href="">
+                                <div class="calendar-day"><span>22</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>23</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>24</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>25</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>26</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>27</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>28</span></div>
+                            </a>
+                        </div>
+                        
+                        <div class="calendar-row">
+                            <a href="">
+                                <div class="calendar-day"><span>29</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>30</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>31</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>32</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>33</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>34</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>35</span></div>
+                            </a>
+                        </div>
+                        
+                        <div class="calendar-row">
+                            <a href="">
+                                <div class="calendar-day"><span>36</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>37</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>38</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>39</span></div>
+                            </a><a href="">
+                                <div class="calendar-day"><span>40</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day"><span>41</span></div>
+                            </a>
+                            <a href="">
+                                <div class="calendar-day inactive"><span></span></div>
+                            </a> 
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

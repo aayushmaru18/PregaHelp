@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title%} Baby-Weight {% endblock %} 
+<section id="baby-weight" class="baby-weight">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-sm-12 mb-3">
+                <h4><span>Baby Weight Estimation</span></h4>
+              </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            {% if request.method == 'POST' %}
+            <div class="col-xl-10">
+                <div class="card p-1 text-center">
+                    <div class="card-body">
+                        <img src="website/static/img/infant.png" class="img-fluid">
+                        <h5 class="mb-0">Expected baby's weight is : <span style="color: #e97195;">{{ predicted }} lbs</span></h5>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-xl-10">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{% url 'baby_weight' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <label for="fatherage" class="form-label text-left">Father's Age : </label>
+                                    <input type="number" class="form-control mx-auto" id="fatherage"
+                                        name="fatherage" placeholder="Enter Father's age" min="18" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="motherage" class="form-label text-left">Mother's Age : </label>
+                                    <input type="number" class="form-control mx-auto" id="mother" name="mother"
+                                        placeholder="Enter Mother's age" min="18" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="gestional" class="form-label text-left">Prenatal Visits :
+                                    </label>
+                                    <input type="number" class="form-control mx-auto" id="gestional"
+                                        name="prenatal" placeholder="Enter Gestional Period"
+                                        required>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <label for="gestional" class="form-label text-left">Gestational Period :
+                                    </label>
+                                    <input type="number" class="form-control mx-auto" id="gestional"
+                                        name="gestional" placeholder="Enter Gestional Period" min="25" max="42"
+                                        required>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="weight" class="form-label text-left">Weight Gained : </label>
+                                    <input type="number" class="form-control mx-auto" id="weight" name="weight"
+                                        placeholder="Enter Weight Gained" required>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="drink" class="form-label text-left">Drinks per Week : </label>
+                                    <input type="number" class="form-control mx-auto" id="drink" name="drink"
+                                        placeholder="Enter Weight Gained" required>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="Cignum" class="form-label text-left">Cignum : </label>
+                                    <input type="number" class="form-control mx-auto" id="cignum" name="Cignum"
+                                        placeholder="Enter Cignum" required>
+                                </div>
+                            
+                                <div class="col-lg-6">
+                                    <label for="Anemia">Anemia</label>
+                                    <br>
+                                    <select name="Anemia" custom_select>
+                                        <option selected>Select Ethinicity of the Father</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="diabetes">Diabetes</label>
+                                    <br>
+                                    <select name="diabetes" custom_select>
+                                        <option selected>Select whether you have Diabetes:</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="Hypertension">Hypertension</label>
+                                    <br>
+                                    <select name="Hypertension" custom_select>
+                                        <option selected>Select whether you have Hypertension</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="cervix">Incompetent cervix</label>
+                                    <br>
+                                    <select name="cervix" custom_select>
+                                        <option selected>Select whether you have cervix</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="preterm">Previous preterm/small Infant</label>
+                                    <br>
+                                    <select name="preterm" custom_select>
+                                        <option selected>Select whether you have preterm/small Infant</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="ethinicityfather">Ethinicity of the Father</label>
+                                    <br>
+                                    <select name="RACEDAD" custom_select>
+                                        <option selected>Select Ethinicity of the Father</option>
+                                        <option value="2">White</option>
+                                        <option value="3">Black</option>
+                                        <option value="5">Chinese</option>
+                                        <option value="6">Japanese</option>
+                                        <option value="1">Other Non-White</option>
+                                        <option value="4">American Indian</option>
+                                        <option value="7">Hawaian</option>
+                                        <option value="8">Philipinean</option>
+                                        <option value="9">Other Asian</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="ethinicitymother">Ethinicity of the Mother</label>
+                                    <br>
+                                    <select name="RACEMOM" custom_select>
+                                        <option selected>Select Ethinicity of the Mother</option>
+                                        <option value="2">White</option>
+                                        <option value="3">Black</option>
+                                        <option value="5">Chinese</option>
+                                        <option value="6">Japanese</option>
+                                        <option value="1">Other Non-White</option>
+                                        <option value="4">American Indian</option>
+                                        <option value="7">Hawaian</option>
+                                        <option value="8">Philipinean</option>
+                                        <option value="9">Other Asian</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-submit">Calculate Baby Weight</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

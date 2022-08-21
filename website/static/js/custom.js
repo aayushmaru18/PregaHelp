@@ -1,0 +1,85 @@
+(function ($) {
+	"use strict";
+
+	/* ..............................................
+	Loader 
+	................................................. */
+
+	$(window).on('load', function () {
+		$('.preloader').fadeOut();
+		$('#preloader').delay(550).fadeOut('slow');
+		$('body').delay(450).css({ 'overflow': 'visible' });
+	});
+
+	/* ..............................................
+	Fixed Menu
+	................................................. */
+
+	$(window).on('scroll', function () {
+		if ($(window).scrollTop() > 50) {
+			$('.top-header').addClass('fixed-menu');
+		} else {
+			$('.top-header').removeClass('fixed-menu');
+		}
+	});
+
+	/* ..............................................
+	Gallery
+	................................................. */
+
+	$('#slides').superslides({
+		inherit_width_from: '.cover-slides',
+		inherit_height_from: '.cover-slides',
+		play: 3000,
+		animation: 'fade',
+	});
+
+	$(".cover-slides ul li").append("<div class='overlay-background'></div>");
+
+	/* ..............................................
+	Map Full
+	................................................. */
+
+	$(document).ready(function () {
+		$(window).on('scroll', function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		$('#back-to-top').click(function () {
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			return false;
+		});
+	});
+}(jQuery));
+
+
+$(document).ready(function () {
+	$(".ovaluation").hide();
+});
+function openDiv() {
+	var value = $('input[type=radio][name=duedate]:checked').attr('id');
+	switch (value) {
+		case 'menstrualperiod':
+			$(".ovaluation").hide();
+			$(".menstrualperiod").show();
+			break;
+		case 'ovaluation':
+			$(".ovaluation").show();
+			$(".menstrualperiod").hide();
+			break;
+	}
+}
+
+
+$(document).ready(function() {
+	$('select').niceSelect();
+	  $("html").niceScroll();	
+	  $(".list").niceScroll();
+	  $('.xyz').on('click',function(){
+		  
+		  event();
+	  });
+  });

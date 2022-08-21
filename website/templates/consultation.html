@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title%} Consultation {% endblock %}
+{% block consultationactive %} active {% endblock consultationactive %}
+<section id="consultation" class="consultation">
+    <div class="container">
+        <div class="row">
+            <div class="section-head col-sm-12 mb-3">
+                <h4><span>Consultation</span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="search-form">
+                    <form action="{% url 'consultation' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="query" id="query" placeholder="Search For City ?">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 px-5">
+            {% for i in dr_list %}
+            <div class="col-lg-6 mb-5">
+                <div class="doctor d-flex align-items-start">
+                    <div class="doctor-pic">
+                        <img
+                            src="{{ i.1 }}">
+                    </div>
+                    <div class="doctor-info">
+                        <h4>{{ i.0 }}</h4>
+                        <span>{{ i.2 }}</span>
+                        <p>{{ i.3 }}</p>
+                        <div class="d-flex mt-3">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h6><b>Address: {{ i.4 }} * {{ i.5 }}</b></h6>
+                        </div>
+                        <div class="read-more">
+                            <a href="{% url 'book_appoitnment' dr_name=i.0 hospital_name=i.5 %}">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

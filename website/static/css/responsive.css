@@ -1,0 +1,58 @@
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.navbar-light .navbar-brand{
+		margin-left: 15px;
+	}
+	.navbar-light .navbar-toggler{
+		margin-right: 15px;
+		border-radius: 0px;
+	}
+	.navbar-expand-lg .navbar-nav .dropdown-menu{
+		box-shadow: none;
+	}
+	.carousel-control-prev{
+		left: -60px;
+	}
+	.carousel-control-next{
+		right: -60px;
+	}
+}
+
+/* mobile or only mobile */
+@media (max-width: 767px) {
+	.navbar-light .navbar-brand{
+		margin-left: 15px;
+	}
+	.navbar-light .navbar-toggler{
+		margin-right: 15px;
+		border-radius: 0px;
+	}
+	.navbar-expand-lg .navbar-nav .dropdown-menu{
+		box-shadow: none;
+	}
+	.cover-slides h1{
+		font-size: 22px;
+	}
+	.cover-slides p {
+		font-size: 14px;
+	}
+	.slides-navigation a{
+		height: 42px;
+		width: 38px;
+		line-height: 33px;
+	}
+	.top-navbar .navbar{
+		border-radius: 16px;
+	}
+	.service-item{
+		margin-bottom: 90px;
+	}
+	.due-date-calculator .form-control{
+		width: 100% !important;
+	}
+	.nice-select {
+		width: 110% !important;
+	}
+
+	
+}
